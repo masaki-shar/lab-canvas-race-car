@@ -1,13 +1,10 @@
-const ctx = document.getElementById("example").getContext('2d');
-
-
 
 class Game {
   constructor() {
     this.theHero = new Hero(180, 380, 40, 50),
-      this.obstacleArray = []
+    this.obstacleArray = []
   }
-
+  
   spawnObstacle() {
     let rX = Math.floor(Math.random() * 400);
     let rY = 0;
@@ -17,7 +14,7 @@ class Game {
     this.obstacleArray.push(newObstacle);
     newObstacle.moveDownForever();
   }
-
+  
   clearUnusedObstacles() {
     this.obstacleArray.forEach((ob, i) => {
       if (ob.y > 400) {
@@ -25,28 +22,29 @@ class Game {
       }
     })
   }
-
-
+  
+  
   collisionDetect(futureX, futureY) {
     let canMove = true;
-
+    
     this.obstacleArray.forEach((obs) => {
-
+      
       console.log(futureX, futureY, this.theHero.width, this.theHero.height, obs.x, obs.y, obs.width, obs.height)
-
-
+      
+      
       if (futureX + this.theHero.width >= obs.x && futureX <= obs.x + obs.width &&
         futureY + this.theHero.height >= obs.y && futureY <= obs.y + obs.height) {
-        canMove = false
-        //alert("game over");
-      }
-    })
-
-    return canMove;
+          canMove = false
+          //alert("game over");
+        }
+      })
+      
+      return canMove;
+    }
   }
-}
 
 
+const ctx = document.getElementById("example").getContext('2d');
 
 class Hero {
   constructor(x, y, width, height) {
