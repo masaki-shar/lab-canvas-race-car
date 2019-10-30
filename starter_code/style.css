@@ -40,7 +40,6 @@ body button {
 
 #example {
   background-image: url(./images/road.png);
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-size: cover;
   border: 1px solid black;
 }
