@@ -169,6 +169,17 @@ document.onkeydown = function (e) {
 
 
 
+<<<<<<< HEAD
+
+
+
+
+
+
+
+
+
+=======
 class Obstacle {
   constructor(x, y, width, height) {
     this.x = x;
@@ -205,3 +216,4 @@ function startGame() {
 }
 
 function scoredown() {}
+>>>>>>> bec385496ec0b5c5ce1a9dabb540bb32daa5e2a9
